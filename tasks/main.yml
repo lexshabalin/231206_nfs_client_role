@@ -14,9 +14,18 @@
     mode: '0777'
   become: true
 
+#- name: Mount an NFS volume local tests
+#  ansible.posix.mount:
+#    src: 192.168.172.145:/opt/files
+#    path: /opt/nfs/file/
+#    opts: rw,sync,hard
+#    state: mounted
+#    fstype: nfs
+#  become: true
+
 - name: Mount an NFS volume
   ansible.posix.mount:
-    src: 192.168.172.145:/opt/files
+    src: www.file01.shabalin.site:/opt/files
     path: /opt/nfs/file/
     opts: rw,sync,hard
     state: mounted
